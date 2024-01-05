@@ -5,6 +5,7 @@ import { useRouter, useRoute } from "vue-router";
 const router = useRouter();
 const route = useRoute();
 
+const drawer = ref(false);
 const corcabecalho = ref("black");
 const corhexa = ref("rgba(0,0,0,1)");
 const corbg = ref("rgba(0,0,0,0)");
@@ -113,6 +114,16 @@ div.container(
           size="xs"
           name="fa-brands fa-linkedin-in"
         )
+      a.botaomenu
+        q-btn(
+          flat
+          @click="drawer = !drawer"
+          round
+          dense
+          size="md"
+          icon="menu"
+          :color="corcabecalho"
+        )
 </template>
 
 <style scoped>
@@ -158,5 +169,15 @@ div>a {
 }
 .texto:hover{
   font-weight: bold;
+}
+@media screen and (min-width: 1024px) {
+  .botaomenu{
+    display:none
+  }
+}
+@media screen and (max-width: 1024px) {
+  .menus{
+    display:none
+  }
 }
 </style>
