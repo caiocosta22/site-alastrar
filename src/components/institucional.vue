@@ -15,16 +15,14 @@ div.container
       )
       p(style="font-size:24px;color:#121212") Serviço
   div.detalhes
-    h1(style="color:#f1bc00") Olá.
-    h4.text-black Somos uma agência de marketing digital.
-    div(
-      style="margin-left:40px"
-    )
+    h1(style="color:#f1bc00;") Olá.
+    h3.text-black Somos uma agência de marketing digital.
+    div
       p(
-        style="margin:0"
+        style="margin-bottom:10px; margin-top:5px"
       ) Lorem ipsum dolor sit amet consectetur eiusmod tempor incididunt labore magna ut enim ad minim veniam nostrud.
       p(
-        style="margin:0;font-weight:bold;text-decoration:underline;cursor:pointer;color:#121212"
+        style="margin:0; font-weight:bold ;text-decoration:underline ;cursor:pointer ;color:#121212"
       ) BOTAO
 </template>
 
@@ -53,7 +51,6 @@ div.container
   flex-direction: row;
   display: flex;
   width: 60%;
-  justify-content: space-between;
   align-items: center;
   text-align: right;
 }
