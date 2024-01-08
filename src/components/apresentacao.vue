@@ -35,7 +35,7 @@ div.container
   z-index: 1;
 }
 h1{
-  color:#0d0d0d;
+  color:#121212;
   font-weight: 600;
   text-align: left;
   margin: 0;
