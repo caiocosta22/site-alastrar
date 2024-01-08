@@ -12,6 +12,22 @@ div.container
       p Sites
       p Campanhas de Tráfego
   div.fotos
+    div
+      img(
+        src="/images/teste/1.png"
+      )
+    div
+      img(
+        src="/images/teste/2.png"
+      )
+    div
+      img(
+        src="/images/teste/3.png"
+      )
+    div
+      img(
+        src="/images/teste/4.png"
+      )
 </template>
 
 <style scoped>
@@ -20,6 +36,7 @@ div.container
   margin: 0 auto;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .titulo {
   width: 60%;
@@ -44,5 +61,17 @@ div.container
   transition: 0.5s;
   cursor: pointer;
   text-decoration: underline;
+}
+.fotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  max-width: 100%;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+img:hover {
+  cursor: pointer;
 }
 </style>
