@@ -9,7 +9,7 @@ div.container
       :key="index"
     )
       q-icon(
-        name="fa-solid fa-bug"
+        name="fa-solid fa-spinner"
         color="info"
         size="xl"
       )
