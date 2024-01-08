@@ -12,22 +12,45 @@ div.container
       p Sites
       p Campanhas de Tráfego
   div.fotos
-    div
+    div.interativa
       img(
         src="/images/teste/1.png"
       )
-    div
+      div.overlay
+        div.overlay2
+          div.text Teste
+    div.interativa
       img(
         src="/images/teste/2.png"
       )
-    div
+      div.overlay
+        div.overlay2
+          div.text Teste
+    div.interativa
       img(
         src="/images/teste/3.png"
       )
-    div
+      div.overlay
+        div.overlay2
+          div.text Teste
+    div.interativa
       img(
         src="/images/teste/4.png"
       )
+      div.overlay
+        div.overlay2
+          div.text Teste
+  div(
+    style="width:60%"
+  )
+    iframe(
+      src="https://d5abe15e98994c288d2e3052094e63e8.elf.site"
+      width="100%"
+      class="insta-widget"
+      frameborder="0"
+      scrolling="no"
+      height="465px"
+    )
 </template>
 
 <style scoped>
@@ -67,11 +90,61 @@ div.container
   grid-template-columns: 1fr 1fr 1fr 1fr;
   max-width: 100%;
 }
+.interativa {
+  position: relative;
+  cursor: pointer;
+}
 img {
   max-width: 100%;
   display: block;
-}
-img:hover {
+  height: auto;
   cursor: pointer;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #fff;
+  z-index: 1;
+}
+.overlay2 {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90%;
+  width: 90%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #9A9A9A;
+  z-index: 2;
+}
+.interativa:hover .overlay {
+  opacity: 0.8;
+}
+.interativa:hover .overlay .overlay2 {
+  opacity: 1;
+}
+.text {
+  color: #FFF;
+  font-weight: bold;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 4;
+  opacity: 1;
 }
 </style>
