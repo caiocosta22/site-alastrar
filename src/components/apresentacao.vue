@@ -33,7 +33,6 @@ div.container
   display: flex;
   width: 100%;
   z-index: 1;
-  height: 10900px;
 }
 h1{
   color:#0d0d0d;
