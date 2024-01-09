@@ -40,17 +40,6 @@ div.container
       div.overlay
         div.overlay2
           div.text Teste
-  div(
-    style="width:60%"
-  )
-    iframe(
-      src="https://d5abe15e98994c288d2e3052094e63e8.elf.site"
-      width="100%"
-      class="insta-widget"
-      frameborder="0"
-      scrolling="no"
-      height="465px"
-    )
 </template>
 
 <style scoped>
