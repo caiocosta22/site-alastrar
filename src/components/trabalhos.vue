@@ -4,7 +4,9 @@
 <template lang="pug">
 div.container
   div.titulo
-    h3 Nossos trabalhos
+    h3(
+      style="font-weight:500;font-size:35px"
+    ) Nossos trabalhos
     div.menus
       p Todos
       p Captação
@@ -12,6 +14,34 @@ div.container
       p Sites
       p Campanhas de Tráfego
   div.fotos
+    div.interativa
+      img(
+        src="/images/teste/1.png"
+      )
+      div.overlay
+        div.overlay2
+          div.text Teste
+    div.interativa
+      img(
+        src="/images/teste/2.png"
+      )
+      div.overlay
+        div.overlay2
+          div.text Teste
+    div.interativa
+      img(
+        src="/images/teste/3.png"
+      )
+      div.overlay
+        div.overlay2
+          div.text Teste
+    div.interativa
+      img(
+        src="/images/teste/4.png"
+      )
+      div.overlay
+        div.overlay2
+          div.text Teste
     div.interativa
       img(
         src="/images/teste/1.png"

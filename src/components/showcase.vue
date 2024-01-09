@@ -3,7 +3,9 @@
 
 <template lang="pug">
 div.titulo
-  h2 Captação de conteúdo audiovisual
+  h2(
+    style="font-weight:500;font-size:35px"
+  ) Captação de conteúdo audiovisual
 div.container
   div.interno
     iframe(

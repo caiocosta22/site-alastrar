@@ -13,7 +13,7 @@ div.container
         color="info"
         size="xl"
       )
-      p(style="font-size:24px;color:#121212") Serviço
+      p(style="font-size:18px;color:#121212") Serviço
   div.detalhes
     h1(style="color:#f1bc00;") Olá.
     h3.text-black Somos uma agência de marketing digital.
