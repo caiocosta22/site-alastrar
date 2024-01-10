@@ -19,7 +19,7 @@ div.container
         style="margin:0"
       ) {{ endereco }}
     div
-      q-icon(
+      q-icon.cursor-pointer(
           name="fa-brands fa-whatsapp"
           color="white"
           size="sm"
