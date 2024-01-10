@@ -11,14 +11,19 @@ div.container
       img(
         src="/icons/icon.png"
       )
-    div
+    div.flex.column
       p(
         style="margin:0"
       ) {{ copyright }}
-    div
       p(
         style="margin:0"
       ) {{ endereco }}
+    div
+      q-icon(
+          name="fa-brands fa-whatsapp"
+          color="white"
+          size="sm"
+        )
 </template>
 
 <style scoped>
