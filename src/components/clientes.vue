@@ -48,5 +48,8 @@ div.container
 img {
   max-width: 100%;
   display: block;
+  cursor: pointer;
+  height: 100px;
+  width: 100px
 }
 </style>
