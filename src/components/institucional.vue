@@ -52,7 +52,7 @@ div.container
       :key="index"
     )
       div.column(
-        style="height: 100%;"
+        style="height: 100%;cursor:pointer"
       )
         div(
           style="height: 80%;"

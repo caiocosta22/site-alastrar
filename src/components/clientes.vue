@@ -71,6 +71,7 @@ img {
   cursor: pointer;
   height: 100px;
   width: 100px;
-  transition: filter 1s ease-in-out; /* Adicionando transição para suavizar a mudança de imagem */
+  transition: filter 1s ease-in-out;
 }
+
 </style>
