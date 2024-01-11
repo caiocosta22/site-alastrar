@@ -1,11 +1,32 @@
 <script setup>
 import { ref } from "vue";
+
 const fotos = ref([
-  "/images/clientes/1.png",
-  "/images/clientes/2.png",
-  "/images/clientes/3.png",
-  "/images/clientes/4.png"
+  {
+    colorida: "/images/clientes/1.png",
+    cinza: "images/clientescinza/1.png",
+    exibircor: false
+  },
+  {
+    colorida: "/images/clientes/2.png",
+    cinza: "images/clientescinza/2.png",
+    exibircor: false
+  },
+  {
+    colorida: "/images/clientes/3.png",
+    cinza: "images/clientescinza/3.png",
+    exibircor: false
+  },
+  {
+    colorida: "/images/clientes/4.png",
+    cinza: "images/clientescinza/4.png",
+    exibircor: false
+  }
 ]);
+
+const alterarImagem = (foto) => {
+  foto.exibircor = !foto.exibircor;
+};
 </script>
 
 <template lang="pug">
@@ -21,7 +42,9 @@ div.container
       )
         div.clientes
           img(
-            :src="foto"
+            :src="foto.exibircor ? foto.colorida : foto.cinza"
+            @mouseover="() => alterarImagem(foto)"
+            @mouseout="() => alterarImagem(foto)"
           )
 </template>
 
@@ -47,6 +70,7 @@ img {
   display: block;
   cursor: pointer;
   height: 100px;
-  width: 100px
+  width: 100px;
+  transition: filter 1s ease-in-out; /* Adicionando transição para suavizar a mudança de imagem */
 }
 </style>
