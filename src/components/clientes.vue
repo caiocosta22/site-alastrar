@@ -15,14 +15,14 @@ div.titulo.text-center
   ) Nossos clientes de sucesso
 div.container
   div.interno
-    div.clientes
-      template(
+    template(
         v-for="foto in fotos"
         :key="foto"
       )
-        img(
-          :src="foto"
-        )
+        div.clientes
+          img(
+            :src="foto"
+          )
 </template>
 
 <style scoped>
@@ -35,10 +35,12 @@ div.container
 .interno {
   margin: 0 auto;
   width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .clientes {
   display: flex;
-  justify-content: space-between;
 }
 img {
   max-width: 100%;
