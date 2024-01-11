@@ -4,10 +4,6 @@ const fotos = ref([
   "/images/clientes/1.png",
   "/images/clientes/2.png",
   "/images/clientes/3.png",
-  "/images/clientes/4.png",
-  "/images/clientes/1.png",
-  "/images/clientes/2.png",
-  "/images/clientes/3.png",
   "/images/clientes/4.png"
 ]);
 </script>
@@ -41,9 +37,8 @@ div.container
   width: 60%;
 }
 .clientes {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 img {
   max-width: 100%;

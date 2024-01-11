@@ -23,7 +23,7 @@ div.container
           name="fa-brands fa-whatsapp"
           color="white"
           size="sm"
-        )
+         )
 </template>
 
 <style scoped>
