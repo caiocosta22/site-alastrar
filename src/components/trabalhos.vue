@@ -3,16 +3,6 @@
 
 <template lang="pug">
 div.container
-  div.titulo
-    h3(
-      style="font-weight:500;font-size:35px"
-    ) Nossos trabalhos
-    div.menus
-      p Todos
-      p Captação
-      p Fotografias
-      p Sites
-      p Campanhas de Tráfego
   div.fotos
     div.interativa
       img(
