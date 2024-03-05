@@ -18,13 +18,14 @@ div.container
       h1(
       ) Espalhe
       q-btn(
-        style="width:80px; border-radius: 20px; margin-top:10px"
+        style="width:300px; border-radius: 20px; margin-top:20px"
         color="secondary"
+        push
       )
         p(
           style="margin:0"
           color="white"
-        ) Botão
+        ) VEM ALASTRAR COM A GENTE
 </template>
 
 <style scoped>
@@ -33,13 +34,12 @@ div.container
   display: flex;
   width: 100%;
   z-index: 1;
-  height: 10900px;
 }
 h1{
-  color:#0d0d0d;
+  color:#121212;
   font-weight: 600;
   text-align: left;
   margin: 0;
-  font-size: 90px
+  font-size: 85px
 }
 </style>
