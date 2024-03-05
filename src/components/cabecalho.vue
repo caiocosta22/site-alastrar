@@ -90,7 +90,6 @@ div.container(
     div.logo
       q-img.imagem(
         :src="logo"
-        spinner-colow="white"
         @click="redirectToHomePage"
         style="cursor:pointer"
       )
@@ -106,19 +105,19 @@ div.container(
         ) {{ item.menu }}
     div
       a
-        q-icon.cursor-pointer(
+        q-icon.cursor-pointer.escala(
           :color="cor"
           size="xs"
           name="fa-brands fa-whatsapp"
         )
       a
-        q-icon.cursor-pointer(
+        q-icon.cursor-pointer.escala(
           :color="cor"
           size="xs"
           name="fa-brands fa-instagram"
         )
       a
-        q-icon.cursor-pointer(
+        q-icon.cursor-pointer.escala(
           :color="cor"
           size="xs"
           name="fa-brands fa-linkedin-in"
@@ -178,6 +177,10 @@ div>a {
 }
 .texto:hover{
   font-weight: bold;
+}
+.escala:hover{
+  transform: scale(1.5);
+  transition: 0.2s ease-in-out;
 }
 @media screen and (min-width: 1024px) {
   .botaomenu{
