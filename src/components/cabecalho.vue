@@ -9,42 +9,50 @@ const cor = ref();
 const corbg = ref();
 const logo = ref();
 
-const menus = ref([
-  {
-    menu: "Home",
-    submenu: [
-      "1",
-      "2"
-    ]
-  },
-  {
-    menu: "Portfolio",
-    submenu: [
-      "1",
-      "2"
-    ]
-  },
-  {
-    menu: "Clientes",
-    submenu: [
-      "1",
-      "2"
-    ]
-  },
-  {
-    menu: "Páginas",
-    submenu: [
-      "1",
-      "2"
-    ]
-  },
-  {
-    menu: "Contato",
-    submenu: [
-      "1",
-      "2"
-    ]
-  }
+const menus = ref(
+  [
+    {
+      menu: "Home",
+      submenu: [
+        "1",
+        "2"
+      ]
+    },
+    {
+      menu: "Portfolio",
+      submenu: [
+        "1",
+        "2"
+      ]
+    },
+    {
+      menu: "Clientes",
+      submenu: [
+        "1",
+        "2"
+      ]
+    },
+    {
+      menu: "Páginas",
+      submenu: [
+        "1",
+        "2"
+      ]
+    },
+    {
+      menu: "Contato",
+      submenu: [
+        "1",
+        "2"
+      ]
+    }
+  ]
+);
+
+const icons = ref([
+  { name: "fa-brands fa-whatsapp" },
+  { name: "fa-brands fa-instagram" },
+  { name: "fa-brands fa-linkedin-in" }
 ]);
 
 const handleScroll = () => {
@@ -104,26 +112,17 @@ div.container(
         p.texto.cursor-pointer(
         ) {{ item.menu }}
     div
-      a
+      a(
+        v-for="icone in icons"
+        :key="icone"
+      )
         q-icon.cursor-pointer.escala(
           :color="cor"
           size="xs"
-          name="fa-brands fa-whatsapp"
-        )
-      a
-        q-icon.cursor-pointer.escala(
-          :color="cor"
-          size="xs"
-          name="fa-brands fa-instagram"
-        )
-      a
-        q-icon.cursor-pointer.escala(
-          :color="cor"
-          size="xs"
-          name="fa-brands fa-linkedin-in"
+          :name="icone.name"
         )
       a.botaomenu
-        q-btn(
+        q-btn.botaomenu(
           flat
           @click="drawer = !drawer"
           round
@@ -181,6 +180,10 @@ div>a {
 .escala:hover{
   transform: scale(1.5);
   transition: 0.2s ease-in-out;
+}
+.botaomenu:hover {
+  transform: rotate(180deg);
+  transition: transform .5s ease-in-out;
 }
 @media screen and (min-width: 1024px) {
   .botaomenu{
