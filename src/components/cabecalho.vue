@@ -1,25 +1,13 @@
 <script setup>
-<<<<<<< HEAD
 import { ref, onMounted, onBeforeUnmount, onBeforeMount } from "vue";
 import { useRouter, useRoute } from "vue-router";
-=======
-import { ref, onMounted, onBeforeUnmount } from "vue";
-import { useRouter } from "vue-router";
->>>>>>> 758367ef5188129a7ba492bd0500056bc49a721d
 
 const router = useRouter();
 
 const drawer = ref(false);
-<<<<<<< HEAD
 const cor = ref();
 const corbg = ref();
 const logo = ref();
-=======
-const logo = ref("/images/logo.png");
-const corcabecalho = ref("black");
-const corhexa = ref("rgba(0,0,0,1)");
-const corbg = ref("rgba(0,0,0,0)");
->>>>>>> 758367ef5188129a7ba492bd0500056bc49a721d
 
 const menus = ref([
   {
@@ -61,7 +49,6 @@ const menus = ref([
 
 const handleScroll = () => {
   const scrollPosition = window.scrollY;
-<<<<<<< HEAD
   if (scrollPosition === 0) {
     corbg.value = "rgba(0,0,0,0)";
     cor.value = "black";
@@ -70,19 +57,6 @@ const handleScroll = () => {
     corbg.value = "rgba(0,0,0,1)";
     cor.value = "white";
     logo.value = "/images/logo-branca.png";
-=======
-  const opacityThreshold = 0;
-  if (scrollPosition > opacityThreshold) {
-    corcabecalho.value = "white";
-    corhexa.value = "rgba(255,255,255,1)";
-    corbg.value = "rgba(0,0,0,1)";
-    logo.value = ref("/images/logo-branca.png");
-  } else {
-    corcabecalho.value = "black";
-    corhexa.value = "rgba(0,0,0,1)";
-    corbg.value = "rgba(0,0,0,0)";
-    logo.value = ref("/images/logo.png");
->>>>>>> 758367ef5188129a7ba492bd0500056bc49a721d
   }
 };
 
@@ -92,7 +66,6 @@ function redirectToHomePage () {
 
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
-<<<<<<< HEAD
 });
 
 onBeforeMount(() => {
@@ -101,8 +74,6 @@ onBeforeMount(() => {
 
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", handleScroll);
-=======
->>>>>>> 758367ef5188129a7ba492bd0500056bc49a721d
 });
 
 onBeforeUnmount(() => {
@@ -119,11 +90,7 @@ div.container(
     div.logo
       q-img.imagem(
         :src="logo"
-<<<<<<< HEAD
         spinner-colow="white"
-=======
-        spinner-color="white"
->>>>>>> 758367ef5188129a7ba492bd0500056bc49a721d
         @click="redirectToHomePage"
         style="cursor:pointer"
       )
