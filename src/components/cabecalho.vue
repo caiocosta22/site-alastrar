@@ -1,14 +1,14 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onBeforeUnmount, onBeforeMount } from "vue";
 import { useRouter, useRoute } from "vue-router";
 
 const router = useRouter();
 const route = useRoute();
 
 const drawer = ref(false);
-const corcabecalho = ref("black");
-const corhexa = ref("rgba(0,0,0,1)");
-const corbg = ref("rgba(0,0,0,0)");
+const cor = ref();
+const corbg = ref();
+const logo = ref();
 
 const menus = ref([
   {
@@ -50,15 +50,14 @@ const menus = ref([
 
 const handleScroll = () => {
   const scrollPosition = window.scrollY;
-  const opacityThreshold = 0;
-  if (scrollPosition > opacityThreshold) {
-    corcabecalho.value = "white";
-    corhexa.value = "rgba(255,255,255,1)";
-    corbg.value = "rgba(0,0,0,1)";
-  } else {
-    corcabecalho.value = "black";
-    corhexa.value = "rgba(0,0,0,1)";
+  if (scrollPosition === 0) {
     corbg.value = "rgba(0,0,0,0)";
+    cor.value = "black";
+    logo.value = "/images/logo.png";
+  } else {
+    corbg.value = "rgba(0,0,0,1)";
+    cor.value = "white";
+    logo.value = "/images/logo-branca.png";
   }
 };
 
@@ -67,9 +66,15 @@ function redirectToHomePage () {
 }
 
 onMounted(() => {
-  if (route.path === "/") {
-    window.addEventListener("scroll", handleScroll);
-  }
+  window.addEventListener("scroll", handleScroll);
+});
+
+onBeforeMount(() => {
+  handleScroll();
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", handleScroll);
 });
 </script>
 
@@ -80,13 +85,13 @@ div.container(
   q-toolbar.cabecalho
     div.logo
       q-img.imagem(
-        src="/images/logo.png"
+        :src="logo"
         spinner-colow="white"
         @click="redirectToHomePage"
         style="cursor:pointer"
       )
     div.menus(
-      :style="{color:corhexa}"
+      :style="{color:cor}"
       :color="corcabecalho"
     )
       template(
@@ -98,19 +103,19 @@ div.container(
     div
       a
         q-icon.cursor-pointer(
-          :color="corcabecalho"
+          :color="cor"
           size="xs"
           name="fa-brands fa-whatsapp"
         )
       a
         q-icon.cursor-pointer(
-          :color="corcabecalho"
+          :color="cor"
           size="xs"
           name="fa-brands fa-instagram"
         )
       a
         q-icon.cursor-pointer(
-          :color="corcabecalho"
+          :color="cor"
           size="xs"
           name="fa-brands fa-linkedin-in"
         )
@@ -122,7 +127,7 @@ div.container(
           dense
           size="md"
           icon="menu"
-          :color="corcabecalho"
+          :color="cor"
         )
 </template>
 
