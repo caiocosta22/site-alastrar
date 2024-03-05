@@ -9,10 +9,7 @@ import clientes from "src/components/clientes.vue";
 <template lang="pug">
 q-page-container
   apresentacao
-  institucional
   trabalhos
-  showcase
-  clientes
 </template>
 
 <style scoped>
