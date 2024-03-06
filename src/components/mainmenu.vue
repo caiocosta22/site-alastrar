@@ -98,7 +98,7 @@ div.container
           )
             div.overlay2
               div.textos
-                div.text2clique para explorar
+                div.text2 clique para explorar
               q-icon.icone(
                 name="fa-solid fa-arrow-right"
                 size="sm"
