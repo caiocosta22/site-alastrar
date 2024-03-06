@@ -7,25 +7,45 @@ const menus = ref(
   [
     {
       descricao: "trabalhos",
-      banner: "/images/teste/1.png",
+      banner: [
+        { foto: "/images/teste/1.png" },
+        { foto: "/images/teste/1.png" },
+        { foto: "/images/teste/1.png" },
+        { foto: "/images/teste/1.png" }
+      ],
       id: 1,
       subtitulo: "nossos trabalhos."
     },
     {
       descricao: "sobre nós",
-      banner: "/images/teste/2.png",
+      banner: [
+        { foto: "/images/teste/2.png" },
+        { foto: "/images/teste/2.png" },
+        { foto: "/images/teste/2.png" },
+        { foto: "/images/teste/2.png" }
+      ],
       id: 2,
       subtitulo: "nossa história."
     },
     {
       descricao: "fala com a gente",
-      banner: "/images/teste/3.png",
+      banner: [
+        { foto: "/images/teste/3.png" },
+        { foto: "/images/teste/3.png" },
+        { foto: "/images/teste/3.png" },
+        { foto: "/images/teste/3.png" }
+      ],
       id: 3,
       subtitulo: "formas de contatar."
     },
     {
       descricao: "nosso QG",
-      banner: "/images/teste/4.png",
+      banner: [
+        { foto: "/images/teste/4.png" },
+        { foto: "/images/teste/4.png" },
+        { foto: "/images/teste/4.png" },
+        { foto: "/images/teste/4.png" }
+      ],
       id: 4,
       subtitulo: "onde estamos."
     }
@@ -65,10 +85,13 @@ div.container
           :class="{ 'sobrelinha': menuselecionado.id === menu.id }"
         ) {{ menu.descricao }}
     div.conteudo
-      div.foto
+      div.foto(
+        v-for="fotos in menuselecionado.banner"
+        :key="fotos"
+      )
         img(
-          v-if="menuselecionado.banner"
-          :src="menuselecionado.banner"
+          v-if="fotos.foto"
+          :src="fotos.foto"
         )
         div.overlay
           div.overlay2
@@ -93,7 +116,7 @@ div.container
   display: flex;
   width: 90%;
   margin: 0 auto;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   height: 100%;
 }
@@ -113,19 +136,19 @@ span:hover{
   text-decoration: underline;
 }
 .menus{
-  width: 50%;
-  justify-content: center;
+  justify-content:space-evenly;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 .conteudo{
-  width: 50%;
-  height: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .foto{
   position: relative;
   cursor: pointer;
+  max-width: 100%;
+  display: block;
 }
 img {
   display: block;
@@ -151,7 +174,7 @@ img {
 }
 .textos{
   position: absolute;
-  top: 90%;
+  top: 85%;
   left: 5%;
   z-index: 4;
   opacity: 1;
@@ -171,7 +194,7 @@ img {
 }
 .q-icon{
   top: 5%;
-  left: 95%;
+  left: 90%;
   z-index: 4;
   position: absolute;
 }
