@@ -137,7 +137,7 @@ div.container(
 .container{
   position: absolute;
   width: 100%;
-  transition: background-color 0.5s;
+  transition: background-color 0.6s ease-in;
 }
 .cabecalho {
   display: flex;
