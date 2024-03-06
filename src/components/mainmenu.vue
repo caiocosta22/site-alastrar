@@ -32,7 +32,23 @@ const menus = ref(
   ]
 );
 
+const fotos = ref([
+  { banner: "/images/teste/4.png" },
+  { banner: "/images/teste/4.png" },
+  { banner: "/images/teste/4.png" },
+  { banner: "/images/teste/4.png" },
+  { banner: "/images/teste/4.png" },
+  { banner: "/images/teste/4.png" },
+  { banner: "/images/teste/4.png" },
+  { banner: "/images/teste/4.png" }
+]);
+
 const menuselecionado = ref();
+const ativo = ref(0);
+
+function ativaSlide (id) {
+  ativo.value = id;
+}
 
 function selectMenu (id) {
   menuselecionado.value = menus.value.find(menu => menu.id === id);
@@ -55,30 +71,64 @@ div.container
   div.interno(
     data-aos="fade-down"
   )
-    div.menus
-      div(
-        v-for="menu in menus"
-        :key="menu"
+    template(
+      v-if="ativo===0"
+    )
+      div.menus(
+        data-aos="fade-down"
       )
-        span(
-          @click="selectMenu(menu.id)"
-          :class="{ 'sobrelinha': menuselecionado.id === menu.id }"
-        ) {{ menu.descricao }}
-    div.conteudo
-      div.foto
-        img(
-          v-if="menuselecionado.banner"
-          :src="menuselecionado.banner"
+        div(
+          v-for="menu in menus"
+          :key="menu"
         )
-        div.overlay
-          div.overlay2
-            div.textos
-              div.text2 clique para explorar
-            q-icon(
-              name="fa-solid fa-arrow-right"
-              size="sm"
-              color="white"
+          span(
+            @click="selectMenu(menu.id)"
+            :class="{ 'sobrelinha': menuselecionado.id === menu.id }"
+          ) {{ menu.descricao }}
+      div.conteudo(
+        data-aos="fade-down"
+      )
+        div.foto
+          img(
+            v-if="menuselecionado.banner"
+            :src="menuselecionado.banner"
+          )
+          div.overlay(
+            @click="ativaSlide(1)"
+          )
+            div.overlay2
+              div.textos
+                div.text2clique para explorar
+              q-icon.icone(
+                name="fa-solid fa-arrow-right"
+                size="sm"
+                color="white"
+              )
+    template(
+      v-if="ativo===1"
+    )
+      div.apresentacao(
+        data-aos="fade-left"
+      )
+        div(
+          @click="ativaSlide(0)"
+          style="display:flex; align-items:center; flex-direction:row; justify-content:start; width:5%; margin-top:20px; gap:5px"
+        )
+          span voltar
+        div.grid(
+          style="display:grid;grid-template-columns:repeat(4,1fr)"
+        )
+          div.foto(
+            v-for="item in fotos"
+            :key="item"
+          )
+            img(
+              :src="item.banner"
             )
+            div.overlay
+            div.overlay2
+              div.textos
+                div.text
 </template>
 
 <style scoped>
@@ -122,6 +172,13 @@ span:hover{
   width: 50%;
   height: 100%;
   display: flex;
+}
+.apresentacao{
+  width: 100%;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 20px;
 }
 .foto{
   position: relative;
@@ -169,7 +226,7 @@ img {
   font-weight: bold;
   font-size: 30px
 }
-.q-icon{
+.icone{
   top: 5%;
   left: 95%;
   z-index: 4;
